@@ -30,13 +30,11 @@ due to the lack of a corresponding function in Emacs.
 
 from __future__ import print_function, unicode_literals
 
-
-import sys
+import errno
 import os
 import re
 import subprocess
-import errno
-
+import sys
 
 # The Cask executable and directories
 CASK = os.path.realpath(os.path.abspath(sys.argv[0]))
