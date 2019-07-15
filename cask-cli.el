@@ -1,4 +1,4 @@
-;;; cask-cli.el --- Cask: CLI interface  -*- lexical-binding: t; -*-
+;;; cask-cli.el --- Cask: CLI interface  -*- lexical-binding: t; coding: utf-8; -*-
 
 ;; Copyright (C) 2012-2014 Johan Andersson
 
@@ -164,7 +164,9 @@ Git is available in `exec-path'."
           (epl-initialize)
           (epl-add-archive "gnu" "https://elpa.gnu.org/packages/")
           (epl-add-archive "melpa" "https://melpa.org/packages/")
+          (princ "Refreshing package archives...")
           (epl-refresh)
+          (princ "Upgrading packages...")
           (epl-upgrade))
       (epl-reset))
     (require 'git)
