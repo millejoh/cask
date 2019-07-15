@@ -59,10 +59,12 @@
           (error
            (add-to-list 'package-archives (cons "gnu" "https://elpa.gnu.org/packages/"))
            (add-to-list 'package-archives (cons "melpa" "https://melpa.org/packages/"))
+           (princ "Refreshing package archives for bootstrap...")
            (package-refresh-contents)
            (mapc
             (lambda (package)
               (unless (package-installed-p package)
+                (princ (format "Installing package: %s" package))
                 (package-install package)))
             cask-bootstrap-packages)
            (mapc 'require cask-bootstrap-packages))))
