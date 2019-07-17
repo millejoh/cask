@@ -23,17 +23,16 @@
 Install Cask
 """
 
-from __future__ import unicode_literals, print_function
+from __future__ import print_function, unicode_literals
 
+import errno
 import os
 import sys
-import errno
 from subprocess import CalledProcessError, check_call
-
 
 HOME = os.path.expanduser('~')
 TARGET_DIRECTORY = os.path.join(HOME, '.cask')
-REPOSITORY = 'https://github.com/cask/cask.git'
+REPOSITORY = 'https://github.com/millejoh/cask.git'
 ISSUE_TRACKER = 'https://github.com/cask/cask/issues'
 
 
@@ -72,7 +71,7 @@ def install_cask(target_directory):
                 target_directory))
     else:
         try:
-            check_call(['git', 'clone', REPOSITORY, target_directory])
+            check_call(['git', 'clone', '--branch', 'appveyor-build', REPOSITORY, target_directory])
         except CalledProcessError:
             raise CaskGoError('Cask could not be installed. Try again '
                               'later, or report an issue at {0}'.format(
