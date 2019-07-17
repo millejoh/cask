@@ -26,6 +26,7 @@
 ;; CLI interface of Cask.
 
 ;;; Code:
+(print "Loading cask-cli.el")
 
 
 (setq utf-translate-cjk-mode nil) ; disable CJK coding/encoding (Chinese/Japanese/Korean characters)
