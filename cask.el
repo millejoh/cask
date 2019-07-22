@@ -34,7 +34,8 @@
 ;; package development cycle.
 
 ;;; Code:
-(print "Loading cask.el")
+;; (print "Loading cask.el")
+(setq debug-on-error t)
 
 (eval-and-compile
   (defconst cask-directory
@@ -48,7 +49,7 @@
 
 (require 'cask-bootstrap (expand-file-name "cask-bootstrap" cask-directory))
 
-(setq package-build-verbose t)        ; Make package-build quiet by
+(setq package-build-verbose nil)        ; Make package-build quiet by
                                         ; not allowing it to print any
                                         ; messages.
 

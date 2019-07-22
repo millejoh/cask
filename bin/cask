@@ -315,7 +315,7 @@ def exec_command(command):
     if ('CASK_EMACS' in os.environ):
         os.environ['EMACS'] = os.environ['CASK_EMACS']
 
-    print("Executing cask exec command {}".format(command))
+    # print("Executing cask exec command {}".format(command))
     try:
         os.execvp(command[0], command)
     except OSError as error:
@@ -350,7 +350,7 @@ def exec_cask(arguments):
     emacs = get_cask_emacs()
     cli = os.path.join(CASK_DIRECTORY, 'cask-cli.el')
     command = [emacs, '-Q', '--script', cli, '--'] + arguments
-    print("Executing cask command {}".format(command))
+    # print("Executing cask command {}".format(command))
     os.execvp(command[0], command)
 
 

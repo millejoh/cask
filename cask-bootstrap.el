@@ -26,7 +26,7 @@
 ;; Bootstrap Cask's internal dependencies.
 
 ;;; Code:
-(print "Loading cask-bootstrap.el")
+;; (print "Loading cask-bootstrap.el")
 
 (eval-when-compile
   (defvar cask-directory))
